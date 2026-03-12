@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Frigo{% endblock %}
+
+{% block body %}
+    <h1>Frigo</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ frigo.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ frigo.nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_frigo_index') }}">back to list</a>
+
+    <a href="{{ path('app_frigo_edit', {'id': frigo.id}) }}">edit</a>
+
+    {{ include('frigo/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Frigo{% endblock %}
+
+{% block body %}
+    <h1>Create new Frigo</h1>
+
+    {{ include('frigo/_form.html.twig') }}
+
+    <a href="{{ path('app_frigo_index') }}">back to list</a>
+{% endblock %}
