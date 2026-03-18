@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mon Frigo Intelligent{% endblock %}</title>
+    {# On garde ces blocs au cas où tu veuilles ajouter du CSS plus tard #}
+    {% block stylesheets %}{% endblock %}
+    {% block javascripts %}{% endblock %}
+</head>
+<body>
+{# Ton menu de navigation #}
 <nav style="background: #f4f4f4; padding: 10px; margin-bottom: 20px;">
-    <a href="{{ path('app_index') }}">🏠 Accueil</a>
-
-    <a href="{{ path('produitapp_produit_index') }}">📦 Catalogue Produits</a>
-
-    <a href="{{ path('frigoapp_frigo_index') }}">❄️ Mon Frigo</a>
-
+    <a href="{{ path('app_index') }}">🏠 Accueil</a> |
+    <a href="{{ path('produitapp_produit_index') }}">📦 Catalogue Produits</a> |
+    <a href="{{ path('frigoapp_frigo_index') }}">❄️ Mon Frigo</a> |
     <a href="{{ path('app_utilisateur_index') }}">👤 Utilisateurs</a>
 </nav>
+
+
+<div style="padding: 20px;">
+    {% block body %}{% endblock %}
+</div>
+
+</body>
 </html>

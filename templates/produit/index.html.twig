@@ -21,19 +21,20 @@
                 <td>{{ produit.id }}</td>
                 <td>{{ produit.nom }}</td>
                 <td>{{ produit.category }}</td>
-                <td>{{ produit.datePeremption }}</td>
+                <td>{{ produit.datePeremption ? produit.datePeremption|date('d/m/Y') : 'Aucune' }}</td>
                 <td>
-                    <a href="{{ path('app_produit_show', {'id': produit.id}) }}">show</a>
-                    <a href="{{ path('app_produit_edit', {'id': produit.id}) }}">edit</a>
+                    {
+                    <a href="{{ path('produitapp_produit_show', {'id': produit.id}) }}">Voir</a>
+                    <a href="{{ path('produitapp_produit_edit', {'id': produit.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Aucun produit trouvé dans le catalogue</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_produit_new') }}">Create new</a>
+    <a href="{{ path('app_produit_new') }}">Créer un nouveau produit</a>
 {% endblock %}
